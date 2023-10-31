@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteiner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #ecdddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
+}
+
+#textBox {
+    margin: 100px 0;
+    height: 100px;
+    width: 50%;
+    font-size: 75px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#display {
+    margin: 100px 0;
+    height: 100px;
+    width: 50%;
+    padding: 20px;
+    display: none;
+    font-size: 75px;
+}
