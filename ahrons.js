@@ -1,21 +1,22 @@
 
 let response = "";
+let currntEvent;
 
+let x = setInterval(() => {
+    document.getElementById("res" + currntEvent).innerHTML = response;
+}, 10);
 
-
-let x= setInterval(() => {
-   
-    if(response.length>0){
-        // console.log("1234");
-        document.getElementById("results").innerHTML = response;
-        // clearInterval(x);
-    }
-}, 100);
-
-function u(){
+function showmessage() {
     setTimeout(() => {
-        response=document.getElementById("input2").value;
-        
+        let name = currntEvent;
+        response = document.getElementById("input" + name).value;
     }, 500);
-
 }
+
+document.querySelectorAll(".input").forEach(element => {
+    element.addEventListener("input", (event) => {
+        currntEvent = event.target.name;
+        showmessage();
+    });
+
+});
