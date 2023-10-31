@@ -5,3 +5,11 @@ shmoulik תקשיב לדביר
 
 hola como estas!
 shmoulik תקשיב לדב
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 63dc0b80366e824ca2181707a872df778b74a100
+היי קוראים לי משה
+=======
+>>>>>>> 8a52b2dbf6a62580d72721f3a8dceda6cb891a12
+=======
+>>>>>>> 20c8f69aa9aad3366ec61f57b497120d8463be26
