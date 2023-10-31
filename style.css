@@ -1,0 +1,20 @@
+body {
+    background-color: rgb(250, 186, 186);
+    text-align: center;
+}
+
+#theHtmlInput {
+    border-radius: 7%;
+    font-size: x-large;
+    color: rgb(123, 27, 27);
+    width: 450px;
+    height: 100px;
+}
+
+#newDiv {
+    border-radius: 5%;
+    font-size: x-large;
+    color: rgb(123, 27, 27);
+    width: 450px;
+    height: 200px;
+}
