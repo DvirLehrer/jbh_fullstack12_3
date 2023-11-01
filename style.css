@@ -1,0 +1,39 @@
+h2{
+    margin-bottom: 2px;
+}
+p{
+    margin: 2px;
+}
+.img{
+    height: 150px;
+    width: 200px;
+}
+.autocomplete {
+    position: relative;
+    display: inline-block;
+}
+.outputContainer{
+   width: 300px;
+   height: 300px;
+
+}
+
+#suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+#suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#suggestions div:hover {
+    background-color: #f0f0f0;
+}
