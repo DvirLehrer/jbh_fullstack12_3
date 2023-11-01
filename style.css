@@ -1,0 +1,57 @@
+    body {
+        direction: rtl;
+        background: url(https://img.freepik.com/free-vector/abstract-colorful-watercolor-texture-background_1035-23145.jpg?size=626&ext=jpg&ga=GA1.1.1940838562.1694635636&semt=ais);
+        background-size: 120%;
+        background-repeat: no-repeat;
+        text-align: center;
+    }
+    h1{
+        /* text-shadow: 2px 2px 3px #000000; */
+        font-size: 40px;
+        text-shadow: 1px 1px 2px black, 0 0 5px blue, 0 0 2px darkblue;
+        
+        font-weight: 500;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    #input {
+        width: 400px;
+        height: 80px;
+        font-size: 40px;
+        border-radius: 10px;
+              background-color: rgba(255, 255, 255, 0.428);
+
+        
+
+    }
+
+    #div {
+        display: none;
+        width: 400px;
+        height: 150px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        font-weight: 800;
+        font-size: 50px;
+        padding: 10px;
+        animation: useranim 10s infinite;
+        border: 10px double;
+        border-radius: 15px;
+
+    }
+    
+@keyframes  useranim{
+  0%{
+    color:   rgb(253, 165, 0) ;
+    background-color:brown ;
+  }
+  50%{
+    color: brown;
+    background-color:rgb(253, 165, 0) ;
+  }
+  100%{
+    color:   rgb(253, 165, 0) ;
+    background-color:brown ;
+  }
+}
