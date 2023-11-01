@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background: linear-gradient(to right, rgb(255, 255, 255), rgb(127, 200, 255), rgb(127, 200, 255), white);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    #contain {
+        position: absolute;
+        text-align: center;
+        top: 100px;
+    }
+
+    #sugg {
+        max-height: 150px;
+        overflow-y: auto;
+    }
+
+    #sugg div {
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        background: linear-gradient(to right, rgb(255, 255, 255), rgb(127, 200, 255), rgb(127, 200, 255), white);
+
+    }
+
+    input {
+        text-align: right;
+        width: 200px;
+    }
+
+    #mail {
+        display: flex;
+        /* flex-direction: row; */
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 10px 2px rgb(255, 2, 2);
+        width: auto;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 150px;
+        display: none;
+    }
+</style>
+
+<body>
+    <div id="contain">
+        <input id="input" type="text" oninput="search()" placeholder="חפש שם">
+        <div id="sugg"></div>
+        <div id="mail"></div>
+    </div>
+</body>
+<script>
+    let man = document.getElementById("input");
+    let arr;
+    let key = [];
+    let value = [];
+    let suggs = document.getElementById("sugg");
+    (async () => {
+        let response = await fetch("address.json");
+        arr = await response.json();
+        // arr = JSON.stringify(arr);
+        for (let i = 0; i < arr.length; i++) {
+            let name = arr[i].name + " " + arr[i].family;
+            let eMail = arr[i].mail;
+            localStorage.setItem(name, eMail);
+        }
+    })()
+
+    const keys = Object.keys(localStorage);
+    for (const key of keys) {
+        const value = localStorage.getItem(key);
+        console.log(value);
+    }
+
+
+
+    let search = () => {
+        suggs.innerHTML = "";
+        const filterPerson = keys.filter(person =>
+            person.includes(man.value)
+        );
+
+        filterPerson.forEach(person => {
+            const suggestionDiv = document.createElement('div');
+            suggestionDiv.textContent = person;
+
+            suggestionDiv.addEventListener('click', () => {
+                // Set the input value to the selected suggestion
+                man.value = person;
+                suggs.innerHTML = "";
+                document.getElementById("mail").style.display = "block";
+                document.getElementById("mail").innerHTML = localStorage.getItem(person);
+            });
+            suggs.appendChild(suggestionDiv);
+        })
+
+    }
+</script>
+
+</html>
