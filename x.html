@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>שם</h1>
+<input type="text" id="names">
+<div id="div1"></div>
+</body>
+<script>
+    let input = document.getElementById("names");
+    let divi = document.getElementById("div1");
+
+    // async function asyncFunction() {
+    //     const response =  await fetch("http://universities.hipolabs.com/search?country=israel");
+    //     const resJson = await response.json();
+    //     console.log(resJson);
+    // }
+
+    // asyncFunction()
+
+
+    // let promise = fetch("http://universities.hipolabs.com/search?country=israel");
+
+    // let response = promise.then(x => x.json()).catch(err=> console.log(err))
+    // // console.log(response)
+    // .then(c =>  document.write(c[22].name)).catch(err=> console.log(err));
+
+    // async function f(){
+    //     return 2;
+    // }
+    var api;
+   
+    async function f() {
+        api = await fetch("index.json");
+        // api= api.json();
+        api =await api.json();
+       
+        
+        api.forEach(element => {
+            localStorage.setItem(element.name + " " + element.fname,element.email);
+            
+        })
+        console.log(api);
+    };
+        
+        f();
+ input.addEventListener("input", function(){
+    divi.innerHTML="";
+    let letters = input.value;
+    console.log(letters);
+
+
+    async function ff() {
+    api2 = await fetch("x.html?name=letters");
+    api2 =await api2.json();
+
+
+    let keys= Object.keys(localStorage);
+    console.log(keys);
+    const filterPerson = keys.filter(person =>
+            person.includes(letters));
+            console.log(filterPerson);
+    
+
+   
+   let namesToShow = keys.filter(key => 
+    key.includes(letters)); 
+ 
+   console.log(namesToShow);
+
+   namesToShow.forEach(elm =>{
+  let name =  document.createElement("div");
+  console.log(elm);
+  name.textContent=elm;
+  console.log(name);
+  divi.appendChild(name);
+   });
+})
+
+
+
+
+
+
+//    let contact=document.createElement("div");
+//    contact.innerText=document.getElementById("names").value;
+//    let res=()=> {const res2=keys.filter(element1=>element1.startsWith(contact))
+//    return res;
+  
+//   let x3= f3(contact);
+//    let x4=document.createElement("div");
+//    x4.innerText=x3;
+//    let x5= document.getElementById("div1");
+//    x5.appendChild(x4);
+ 
+
+
+   
+   
+//    let keys= Object.keys(localStorage);
+//    console.log(keys, 20);
+
+
+
+
+
+//    function f2(){
+// keys.forEach(element2 => {
+//     for(let i=0; i<element2.length; i++){
+//         if(element2.charAt=="")
+//     }
+
+
+//    }
+
+//         var table = [];
+//     for (let i = 0; i < api.length; i++) {
+         
+//         var elm = "{" + "'" + api[i].name + "_" + api[i].fname +"':'" + api[i].email + "'}" ;
+//         table.push(elm);
+        
+//     }
+
+
+// console.log(table);
+   
+
+
+
+    // let p = new Promise(function (resolve)  {
+    //     let waitingTime = Math.floor(Math.random()*20000);
+    //     setTimeout(()=> resolve(), waitingTime)
+    // });
+    // p.then(()=>console.log("resolve " + 1))//resolve 1
+    // .then(()=>console.log("resolve " + 2)) // resolve 2
+    // .then(()=>console.log("resolve " + 3)); // resolve 3
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
