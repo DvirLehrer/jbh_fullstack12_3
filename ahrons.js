@@ -2,7 +2,7 @@
 let response = "";
 let currntEvent;
 
-let x = setInterval(() => {
+setInterval(() => {
     document.getElementById("res" + currntEvent).innerHTML = response;
 }, 10);
 
