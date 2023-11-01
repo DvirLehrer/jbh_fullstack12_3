@@ -1,2 +1,4 @@
 const name = 'Michael Busso';
-111111111111111111111111111111111111111111:
+if (name){
+    console.log(name);
+}
