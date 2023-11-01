@@ -1,14 +1,17 @@
 let response = '';
 
 setInterval(() => {
-    if (response.length > 0) {
-        document.getElementById('display').style.display = 'block';
-        document.getElementById('display').innerText = response;
+    if (document.getElementById('textBox').value !== '') {
+        document.getElementById('display').style.display = 'flex';
+        document.getElementById('display').innerHTML = "<p>" + response + "</p>";
+    }
+    else {
+        document.getElementById('display').style.display = 'none';
     }
 }, 100);
 
 document.getElementById('textBox').addEventListener('input', () => {
     setTimeout(() => {
-        response = 'abc';
+        response = 'Now you can see me!';
     }, 500)
 }) 
