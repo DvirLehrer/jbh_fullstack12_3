@@ -8,36 +8,44 @@ async function storage () {
     });
 }
 
-storage();
 
+let display = false;
+let nameList = [];
 
-function getNamedLeast () {
+function getNamedList (letter) {
     document.getElementById('container').innerHTML = ""
 
-    let mainInput = document.getElementById('myInput').value;
-
-    if (mainInput != "") {
+    if (letter != "") {
         let keys = Object.keys(localStorage);
-        console.log(keys);
-        let arr = keys.filter((elm)=> elm.startsWith(mainInput))
+        let arr = keys.filter((elm)=> elm.startsWith(letter))
         console.log(arr);
+        if (display){
+            displayNamesTest(arr);
+        }
 
-        arr.forEach(element => {
-        
-            let myDiv = document.createElement('div');
+        nameList = arr;
 
-            document.getElementById('container').appendChild(myDiv);
-            myDiv.innerHTML = element;
 
-            myDiv.addEventListener("click", ()=>{
-            document.getElementById('container').innerHTML = ""
-            let newDiv = document.createElement('div');
-            // newDiv.innerText = element;
-            // newDiv.innerText = localStorage.getItem(element);
-            newDiv.innerHTML = `${element}<br>${localStorage.getItem(element)}`;
-            document.getElementById('container').appendChild(newDiv);
-        })
-    })
     }
 
+}
+
+function displayNamesTest(arr){
+    arr.forEach(element => {
+           
+        
+        let myDiv = document.createElement('div');
+
+        document.getElementById('container').appendChild(myDiv);
+        myDiv.innerHTML = element;
+
+        myDiv.addEventListener("click", ()=>{
+        document.getElementById('container').innerHTML = ""
+        let newDiv = document.createElement('div');
+        // newDiv.innerText = element;
+        // newDiv.innerText = localStorage.getItem(element);
+        newDiv.innerHTML = `${element}<br>${localStorage.getItem(element)}`;
+        document.getElementById('container').appendChild(newDiv);
+    })
+})
 }
