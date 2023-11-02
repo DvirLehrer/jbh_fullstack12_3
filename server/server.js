@@ -9,12 +9,13 @@ async function storage () {
 }
 
 
-let display = false;
+let display = true;
 let nameList = [];
 
-function getNamedList (letter) {
-    document.getElementById('container').innerHTML = ""
-
+function getNamedList(letter) {
+    letter = decodeURIComponent(letter);
+    console.log(letter);
+    document.getElementById('container').innerHTML = "";
     if (letter != "") {
         let keys = Object.keys(localStorage);
         let arr = keys.filter((elm)=> elm.startsWith(letter))

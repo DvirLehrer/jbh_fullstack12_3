@@ -1,19 +1,23 @@
-
 let response = ""
-function kelet() {
-    response = document.getElementById("input").value;
+
+async function inputChange() {
+    let inputValue = document.getElementById('textbox').value;
+    response = httpRequest(inputValue);
+    displayResult();
 }
-document.getElementById('input').addEventListener('input',kelet);
+
+function httpRequest(input) {
+    location.href = "server/test_server.html?h=" + input;
+    return "ABC";
+}
 
 
-setInterval(() => {
-    if (response.length > 0) {
-        setTimeout(
-            result, 1000);
-    }
-}, 100)
-function result() {
-    document.getElementById("div").innerText = "המשימה הושלמה בהצלחה!";
+document.getElementById('textbox').addEventListener('input',inputChange);
+
+function displayResult() {
+    document.getElementById("div").innerText = response;
     document.getElementById("div").style.display = "block";
 
 }
+
+
